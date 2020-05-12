@@ -1,0 +1,10 @@
+{
+  "cucumberautocomplete.steps": [
+    "auto-js-lola-tech/lola-tech/test/definitions/*.js"
+  ],
+  "cucumberautocomplete.syncfeatures": "/auto-js-lola-tech/lola-tech/test/features/*feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "cucumberautocomplete.strictGherkinValidation": true
+  // "git.ignoreLimitWarning": true
+}
