@@ -1,8 +1,7 @@
 class HomePage {
-
-    openURL() {
-        browser.url('https://webdriver.io');
-    }
+  openURL() {
+    browser.url("https://webdriver.io");
+  }
 }
-    export default new HomePage();
 
+export default new HomePage();
