@@ -5,8 +5,8 @@ class HomePage extends Page {
     browser.url("www.lola.tech");
     const logo = $("a[class='jobs nav-jobs w-button']");
 
-    logo.getText();
-    console.log(logo);
+    let text = logo.getText();
+    console.log(text);
     // this.clickElement(logo);
   }
 }
