@@ -64,7 +64,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "silent",
   //
   // Set specific log levels per logger
   // loggers:
@@ -76,8 +76,8 @@ exports.config = {
   // - @wdio/cli, @wdio/config, @wdio/sync, @wdio/utils
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   // logLevels: {
-  //     webdriver: 'info',
-  //     '@wdio/applitools-service': 'info'
+  //   webdriver: "silent",
+  //   "@wdio/applitools-service": "info",
   // },
   //
   // If you only want to run your tests until a specific amount of tests have failed use
@@ -127,7 +127,7 @@ exports.config = {
   //
   // If you are using Cucumber you need to specify the location of your step definitions.
   cucumberOpts: {
-    require: ["test/definitions/*.js"], // <string[]> (file/dir) require files before executing features
+    require: ["test/definitions/*.js", "generic/definitions/*.js"], // <string[]> (file/dir) require files before executing features
     backtrace: true, // <boolean> show full backtrace for errors
     requireModule: ["@babel/register"], // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
     dryRun: false, // <boolean> invoke formatters without executing steps
