@@ -5,16 +5,17 @@ class Hooks extends Page {
   getWebElement(elementName, page) {
     elementName = Utils.formatLocator(elementName);
 
-    switch(page) {
+    switch (page) {
       case "Home":
         return {
           latest_jobs_button: $("a[class='jobs nav-jobs w-button']"),
+          hi_message: $("h2[class='h2 intro_title margin-top h2-covid']"),
         }[elementName];
       case "Jobs":
         // code block
         break;
       case "About":
-        // code block
+      // code block
     }
   }
 }
