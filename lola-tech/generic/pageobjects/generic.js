@@ -5,8 +5,8 @@ class Page {
       behavior: "smooth",
       block: "center",
     });
-    webElement.waitForClickable();
     browser.pause(1500);
+    webElement.waitForClickable();
   }
 }
 
