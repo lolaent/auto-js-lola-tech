@@ -27,7 +27,7 @@ Feature: Homepage
 
    Scenario: Verify the Digital Experiences and Strategies button redirects to the Digital Experiences page
       Given I access the URL "https://lola-tech.webflow.io/"
-      Then I validate that the "Digital Experiences and Strategies" text from the "Home" page
+      Then I validate that the "Digital Experiences and Strategies" text from the "Home" page is correct
       When I click on the "Digital Experiences and Strategies button" from the "Home" page
       Then The URL path is "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
       And I validate that the "Our web solutions helps you do better business" text from the "Digital Experiences" page is correct
@@ -37,7 +37,7 @@ Feature: Homepage
 
    Scenario: Verify the Enterprise Level Software Delivery button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
-      Then I validate that the "Enterprise Level Software Delivery" text from the "Home" page
+      Then I validate that the "Enterprise Level Software Delivery" text from the "Home" page is correct
       When I click on the "Enterprise Level Software Delivery button" from the "Home" page
       Then The URL path is "https://lola-tech.webflow.io/work-with-us-enterprise-level-software-delivery"
       And The title of the "Software Delivery" page tab is "Work With Us. Enterprise-level Software Delivery."
@@ -47,7 +47,7 @@ Feature: Homepage
 
    Scenario: Verify the Interface Design and Development button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
-      Then I validate that the "Interface Design and Development" text from the "Home" page
+      Then I validate that the "Interface Design and Development" text from the "Home" page is correct
       When I click on the "Interface Design and Development button" from the "Home" page
       Then The URL path is "https://lola-tech.webflow.io/work-with-us-how-we-design"
       And The title of the "How We Design" page tab is "Work With Us. How We Design."
