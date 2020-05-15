@@ -24,6 +24,7 @@ class GenericActions extends Page {
   checkElementIsDisplayed(element, page) {
     let webElement = Hooks.getWebElement(element, page);
     expect(webElement).toBeDisplayed();
+    console.log("The ", element, " is displayed");
   }
 }
 

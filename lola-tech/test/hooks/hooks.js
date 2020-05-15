@@ -10,6 +10,7 @@ class Hooks extends Page {
         return {
           latest_jobs_button: $("a[class='jobs nav-jobs w-button']"),
           hi_message: $("h2[class='h2 intro_title margin-top h2-covid']"),
+          cookie_popup: $("div[id='CybotCookiebotDialog']"),
         }[elementName];
       case "Jobs":
         // code block
