@@ -1,7 +1,10 @@
 import { When, Then } from "cucumber";
 import GenericActions from "../../generic/pageobjects/generic_actions";
 
-When(/^I click on "([^"]*)" from "([^"]*)" page$/, function (element, page) {
+When(/^I click on the "([^"]*)" from the "([^"]*)" page$/, function (
+  element,
+  page
+) {
   GenericActions.clickElement(element, page);
 });
 
