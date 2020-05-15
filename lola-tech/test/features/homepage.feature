@@ -6,4 +6,5 @@ Feature: Homepage
    @test
    Scenario: Access the Homepage
       Given I access the URL "https://www.lola.tech"
+      Then The "" from the "Home" page is displayed
       When I click on "Latest Jobs Button" from "Home" page

@@ -2,11 +2,28 @@ import Page from "../.././generic/pageobjects/generic";
 import Hooks from "../../test/hooks/hooks";
 
 class GenericActions extends Page {
-  clickOnElement(element, page) {
+  clickElement(element, page) {
     let webElement = Hooks.getWebElement(element, page);
+    this.waitToBeClickable(webElement);
     console.log("Clicking on: ", element);
-    this.clickElement(webElement); // de discutat
+    webElement.click();
     console.log("Clicked successfully.");
+  }
+
+  clickDisabledElement(element, page) {
+    let webElement = Hooks.getWebElement(element, page);
+    webElement.waitForDisplayed();
+    webElement.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+    browser.pause(1500);
+    webElement.click();
+  }
+
+  checkElementIsDisplayed(element, page) {
+    let webElement = Hooks.getWebElement(element, page);
+    expect(webElement).toBeDisplayed();
   }
 }
 
