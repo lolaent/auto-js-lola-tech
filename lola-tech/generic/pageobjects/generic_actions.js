@@ -5,9 +5,9 @@ class GenericActions extends Page {
   clickElement(element, page) {
     let webElement = Hooks.getWebElement(element, page);
     this.waitToBeClickable(webElement);
-    console.log("Clicking on: ", element);
+    console.log(`Clicking on: ${element}`);
     webElement.click();
-    console.log("Clicked successfully.");
+    console.log(`Clicked successfully.`);
   }
 
   clickDisabledElement(element, page) {
