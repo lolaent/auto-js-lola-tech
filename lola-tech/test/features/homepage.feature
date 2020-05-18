@@ -13,7 +13,7 @@ Feature: Homepage
    Scenario: Verify Covid banner redirects to correct page
       Given I access the URL "https://lola-tech.webflow.io/"
       When I click on the "Covid Banner" from the "Home" page
-      Then The user is redirect to "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
+      Then The user is redirected to "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
       And The title of the "Covid" page tab is "Our bench is your bench: Lola Tech’s response to the Covid-19 situation"
       And I validate that the "Our bench is your bench: Lola Tech’s response to the Covid-19 situation" text from the "Covid" page is correct
       And The "Coronavirus help email" from the "Covid" page is clickable
@@ -21,7 +21,7 @@ Feature: Homepage
    Scenario: Verify Lola Tech logo redirects to homepage
       Given I access the URL "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
       When I click on the "Lola Tech logo" from the "Covid" page
-      Then The user is redirect to "https://lola-tech.webflow.io"
+      Then The user is redirected to "https://lola-tech.webflow.io"
       And The title of the "Home" page tab is "lola.tech"
       And The "Hi message" from the "Home" page is displayed
 
@@ -29,31 +29,31 @@ Feature: Homepage
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the "Digital Experiences and Strategies" text from the "Home" page is correct
       When I click on the "Digital Experiences and Strategies button" from the "Home" page
-      Then The user is redirect to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
       And I validate that the "Our web solutions helps you do better business" text from the "Digital Experiences" page is correct
       And The title of the "Digital Experiences" page tab is "Work With Us. Digital Experiences, Strategy and Design."
       When I click on the "Read more on how we design link" from the "Digital Experiences" page
-      Then The user is redirect to "https://lola-tech.webflow.io/work-with-us-how-we-design"
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-how-we-design"
 
    Scenario: Verify the Enterprise Level Software Delivery button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the "Enterprise Level Software Delivery" text from the "Home" page is correct
       When I click on the "Enterprise Level Software Delivery button" from the "Home" page
-      Then The user is redirect to "https://lola-tech.webflow.io/work-with-us-enterprise-level-software-delivery"
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-enterprise-level-software-delivery"
       And The title of the "Software Delivery" page tab is "Work With Us. Enterprise-level Software Delivery."
       And I validate that the "You're growing fast. We can help you move even faster." text from the "Software Delivery" page is correct
       When I click on the "DevOps from the Start link" from the "Software Delivery" page
-      Then The user is redirect to "https://lola-tech.webflow.io/work-with-us-devops-from-the-start"
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-devops-from-the-start"
 
    Scenario: Verify the Interface Design and Development button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the "Interface Design and Development" text from the "Home" page is correct
       When I click on the "Interface Design and Development button" from the "Home" page
-      Then The user is redirect to "https://lola-tech.webflow.io/work-with-us-how-we-design"
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-how-we-design"
       And The title of the "How We Design" page tab is "Work With Us. How We Design."
       And I validate that the "How We Design." text from the "How We Design" page is correct
       When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
-      Then The user is redirect to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
 
    Scenario: Verify Addresses from Home Page and Join Us Page
       Given I access the URL "https://lola-tech.webflow.io/"
