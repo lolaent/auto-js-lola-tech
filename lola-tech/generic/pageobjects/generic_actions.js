@@ -1,5 +1,7 @@
 import Page from "../.././generic/pageobjects/generic";
 import Hooks from "../../test/hooks/hooks";
+let assert = require('chai').assert
+
 
 class GenericActions extends Page {
   clickElement(element, page) {
@@ -24,8 +26,14 @@ class GenericActions extends Page {
   checkElementIsDisplayed(element, page) {
     let webElement = Hooks.getWebElement(element, page);
     console.log(`Checking if ${element} is displayed`);
-    expect(webElement).toBeDisplayed();
+    assert.isTrue(webElement.isDisplayed(), "The element is not displayed");
     console.log(`The element is displayed`);
+  }
+
+  validateText(element, page, expectedText) {
+    let webElement = Hooks.getWebElement(element, page);
+    let actualText = webElement.getText().replace(/(\r\n|\n|\r)/gm," ");
+    assert.equal(actualText, expectedText, "The text is not displayed not incorrect");
   }
 }
 

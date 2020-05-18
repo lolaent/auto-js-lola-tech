@@ -14,3 +14,12 @@ Then(/^The "([^"]*)" from the "([^"]*)" page is displayed$/, function (
 ) {
   GenericActions.checkElementIsDisplayed(element, page);
 });
+
+Then(/^I validate that the "([^"]*)" element from the "([^"]*)" page reads "([^"]*)"$/, function (
+  element,
+  page, expectedText
+) {
+  GenericActions.validateText(element, page, expectedText);
+});
+
+
