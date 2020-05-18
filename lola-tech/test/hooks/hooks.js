@@ -17,6 +17,10 @@ class Hooks extends Page {
         break;
       case "About":
       // code block
+      case "Future-proof":
+        return{
+          hlo_title: $("h1[class='blurring-title h_title']"),
+        }[elementName];
     }
   }
 }
