@@ -15,11 +15,16 @@ Then(/^The "([^"]*)" from the "([^"]*)" page is displayed$/, function (
   GenericActions.checkElementIsDisplayed(element, page);
 });
 
-Then(/^I validate that the "([^"]*)" element from the "([^"]*)" page reads "([^"]*)"$/, function (
-  element,
-  page, expectedText
+Then(
+  /^I validate that the "([^"]*)" element from the "([^"]*)" page reads "([^"]*)"$/,
+  function (element, page, expectedText) {
+    GenericActions.validateText(element, page, expectedText);
+  }
+);
+
+Then(/^I validate that the text from "([^"]*)" page is correct$/, function (
+  page,
+  table
 ) {
-  GenericActions.validateText(element, page, expectedText);
+  GenericActions.validateMultipleText(page, table);
 });
-
-

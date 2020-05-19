@@ -1,5 +1,6 @@
 import Page from "../../generic/pageobjects/generic";
 import Utils from "../../generic/pageobjects/utils";
+let assert = require("chai").assert;
 
 class Hooks extends Page {
   getWebElement(elementName, page) {
@@ -18,9 +19,13 @@ class Hooks extends Page {
       case "About":
       // code block
       case "Future-proof":
-        return{
+        return {
           hlo_title: $("h1[class='blurring-title h_title']"),
         }[elementName];
+      default:
+        assert.fail(
+          `The page argument is not provided or does not exist inside on the Hooks page.`
+        );
     }
   }
 }
