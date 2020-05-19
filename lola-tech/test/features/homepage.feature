@@ -87,5 +87,5 @@ Feature: Homepage
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
          | 0 | elementParam       | expectedText                                  |
-         | 1 | Hi message         | The perfect technology for an imperfect world |
+         | 1 | Hi message         | Hi—we’re Lola Tech.                           |
          | 2 | Latest Jobs button | LATEST JOBS                                   |
