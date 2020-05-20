@@ -3,7 +3,6 @@ import Hooks from "../../test/hooks/hooks";
 let assert = require("chai").assert;
 let webElement;
 
-const emailElement = "p[class='utility_intro full']";
 class GenericActions extends Page {
   clickElement(element, page) {
     webElement = Hooks.getWebElement(element, page);
