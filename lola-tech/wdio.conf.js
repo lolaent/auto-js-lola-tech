@@ -1,3 +1,18 @@
+/* eslint-disable */
+let browsers = require("./browser_config");
+// check if the optional `target_browser` parameter is present in the CLI options
+let browserConfig = null;
+let browserArg = process.argv.find(function (arg) {
+  return /target_browser/.test(arg);
+});
+
+if (browserArg) {
+  browserConfig = browsers[browserArg.split("=")[1]];
+}
+if (!browserConfig) {
+  browserConfig = browsers["chrome"];
+}
+
 exports.config = {
   //
   // ====================
@@ -44,21 +59,22 @@ exports.config = {
   // https://docs.saucelabs.com/reference/platforms-configurator
   //
   capabilities: [
-    {
-      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-      // grid with only 5 firefox instances available you can make sure that not more than
-      // 5 instances get started at a time.
-      maxInstances: 5,
-      //
-      browserName: "chrome",
-      'goog:chromeOptions': {
-        args: ['--start-fullscreen'],
-      },
-      // If outputDir is provided WebdriverIO can capture driver session logs
-      // it is possible to configure which logTypes to include/exclude.
-      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-      // excludeDriverLogs: ['bugreport', 'server'],
-    },
+    browserConfig,
+    // {
+    //   // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+    //   // grid with only 5 firefox instances available you can make sure that not more than
+    //   // 5 instances get started at a time.
+    //   maxInstances: 5,
+    //   //
+    //   browserName: "chrome",
+    //   "goog:chromeOptions": {
+    //     args: ["--start-fullscreen"],
+    //   },
+    //   // If outputDir is provided WebdriverIO can capture driver session logs
+    //   // it is possible to configure which logTypes to include/exclude.
+    //   // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+    //   // excludeDriverLogs: ['bugreport', 'server'],
+    // },
   ],
   //
   // ===================
