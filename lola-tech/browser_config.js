@@ -16,16 +16,18 @@ module.exports = {
     browserName: "firefox",
     maxInstances: 5,
   },
+  
   firefoxResponsive: {
     browserName: "firefox",
-    maxInstances: 5,
-    alwaysMatch: {
-      // browser specific configuration
-      "moz:browserOptions": {
-        args: ["width:411, height: 731"],
+    "moz:firefoxOptions": {
+      "prefs": {},
+      "log": {
+        "level": "trace"
       },
-    },
+      "args": ["--height=731, width=411"]
+    }
   },
+
   safari: {
     browserName: "safari",
     maxInstances: 5,
