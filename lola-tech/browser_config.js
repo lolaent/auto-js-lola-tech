@@ -16,16 +16,6 @@ module.exports = {
     browserName: "firefox",
     maxInstances: 5,
   },
-  // firefoxResponsive: {
-  //   browserName: "firefox",
-  //   maxInstances: 5,
-  //   alwaysMatch: {
-  //     // browser specific configuration
-  //     "moz:browserOptions": {
-  //       args: ["setWindowRect:true," , "--width=411, --height=731"],
-  //     },
-  //   },
-  // }
   
   firefoxResponsive: {
     browserName: "firefox",
