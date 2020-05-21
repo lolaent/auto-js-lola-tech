@@ -185,8 +185,7 @@ exports.config = {
    * @param  {[type]} args     object that will be merged with the main configuration once worker is initialised
    * @param  {[type]} execArgv list of string arguments passed to the worker process
    */
-  // onWorkerStart: function (cid, caps, specs, args, execArgv) {
-  // },
+  // onWorkerStart: function (cid, caps, specs, args, execArgv) {},
   /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
    * to manipulate configurations depending on the capability or spec.
@@ -194,8 +193,7 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // beforeSession: function (config, capabilities, specs) {
-  // },
+  // beforeSession: function (config, capabilities, specs) {},
   /**
    * Gets executed before test execution begins. At this point you can access to all global
    * variables like `browser`. It is the perfect place to define custom commands.
@@ -214,8 +212,21 @@ exports.config = {
   /**
    * Runs before a Cucumber feature
    */
-  // beforeFeature: function (uri, feature, scenarios) {
-  // },
+  beforeFeature: function (uri, feature, scenarios) {
+    //the parameters of the default syntax do not matter for our function below
+    let browserArg = process.argv.find(function (arg) {
+      return /target_browser/.test(arg);
+    });
+    let browserName = browserArg.split("=")[1]; //this splits the command line argument to just the browser name
+    switch (browserName) {
+      case "safari":
+        browser.maximizeWindow();
+        break;
+      case "safariResponsive":
+        browser.setWindowSize(375, 812);
+        break;
+    }
+  },
   /**
    * Runs before a Cucumber scenario
    */
