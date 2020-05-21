@@ -28,13 +28,17 @@ Feature: Homepage
 
    Scenario: Verify the Digital Experiences and Strategies button redirects to the Digital Experiences page
       Given I access the URL "https://lola-tech.webflow.io/"
-   # Then I validate that the "Digital Experiences and Strategies" text from the "Home" page is correct
-   # When I click on the "Digital Experiences and Strategies button" from the "Home" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
-   # And I validate that the "Our web solutions helps you do better business" text from the "Digital Experiences" page is correct
-   # And The title of the "Digital Experiences" page tab is "Work With Us. Digital Experiences, Strategy and Design."
-   # When I click on the "Read more on how we design link" from the "Digital Experiences" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-how-we-design"
+      Then I validate that the text from "Home" page is correct
+         | 0 | elementParam                       | expectedText                       |
+         | 1 | Digital experiences and strategies | Digital Experiences and Strategies |
+      When I click on the "Digital Experiences and Strategies button" from the "Home" page
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
+      Then I validate that the text from "Digital Experiences" page is correct
+         | 0 | elementParam | expectedText                                   |
+         | 1 | Page Title   | Our web solutions helps you do better business |
+      And The title of the current page tab is "Work With Us: Digital Experience, Strategy and Design"
+      When I click on the "Read more on how we design link" from the "Digital Experiences" page
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-how-we-design"
 
    Scenario: Verify the Enterprise Level Software Delivery button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
