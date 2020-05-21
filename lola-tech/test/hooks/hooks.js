@@ -13,16 +13,27 @@ class Hooks extends Page {
           hi_message: $("h2[class='h2 intro_title margin-top h2-covid']"),
           cookie_popup: $("div[id='CybotCookiebotDialog']"),
           covid_banner: $("a[class='link-block link-covid w-inline-block']"),
+          digital_experiences_and_strategies: $(
+            "div[class='div-cards']:first-child h3"
+          ),
+          digital_experiences_and_strategies_button: $(
+            "div[class='div-cards'] a[href='/work-with-us-digital-experience-strategy-and-design']"
+          ),
         }[elementName];
       case "Jobs":
         // code block
         break;
       case "About":
-      // code block
-      break;
+        // code block
+        break;
       case "Future-proof":
         return {
           hlo_title: $("h1[class='blurring-title h_title']"),
+        }[elementName];
+      case "Digital Experiences":
+        return {
+          page_title: $("h1[class='blurring-title h_title']"),
+          read_more_on_how_we_design_link: $("div[class='text-block']"),
         }[elementName];
       case "Covid":
         return {
