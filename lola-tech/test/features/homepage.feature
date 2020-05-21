@@ -3,7 +3,7 @@ Feature: Homepage
 
    Automated tests for Lola Tech website homepage
 
-
+   @test
    Scenario: Access the Homepage
       Given I access the URL "https://lola-tech.webflow.io/"
       Then The "Hi message" from the "Home" page is displayed
@@ -86,6 +86,6 @@ Feature: Homepage
    Scenario: Validate multiple text on the Home page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
-         | 0 | elementParam       | expectedText                                  |
-         | 1 | Hi message         | Hi—we’re Lola Tech.                           |
-         | 2 | Latest Jobs button | LATEST JOBS                                   |
+         | 0 | elementParam       | expectedText          |
+         | 1 | Hi message         | Hi—we’re Lola Tech. |
+         | 2 | Latest Jobs button | LATEST JOBS           |
