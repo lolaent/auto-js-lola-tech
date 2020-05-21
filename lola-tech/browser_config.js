@@ -16,22 +16,28 @@ module.exports = {
     browserName: "firefox",
     maxInstances: 5,
   },
-  
+
   firefoxResponsive: {
     browserName: "firefox",
     "moz:firefoxOptions": {
-      "prefs": {},
-      "log": {
-        "level": "trace"
+      prefs: {},
+      log: {
+        level: "trace",
       },
-      "args": ["--height=731, width=411"]
-    }
+      args: ["--height=731, width=411"],
+    },
   },
 
   safari: {
     browserName: "safari",
     maxInstances: 5,
   },
+
+  safariResponsive: {
+    browserName: "safari",
+    maxInstances: 5,
+  },
+
   ie: {
     browserName: "internet explorer",
     platform: "",
