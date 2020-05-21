@@ -10,20 +10,22 @@ Feature: Homepage
       # And The "Cookie Popup" from the "Home" page is displayed (does not work on stage site)
       When I click on the "Latest Jobs button" from the "Home" page
 
-   Scenario: Verify Covid banner redirects to correct page
+   Scenario: Verify Covid banner redirects to the correct page
       Given I access the URL "https://lola-tech.webflow.io/"
       When I click on the "Covid Banner" from the "Home" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
-   # And The title of the "Covid" page tab is "Our bench is your bench: Lola Tech’s response to the Covid-19 situation"
-   # And I validate that the "Our bench is your bench: Lola Tech’s response to the Covid-19 situation" text from the "Covid" page is correct
-   # And The "Coronavirus help email" from the "Covid" page is clickable
+      Then The user is redirected to "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
+      And The title of the current page tab is "Our bench is your bench: Lola Tech’s response to the Covid-19 situation"
+      And I validate that the text from "Covid" page is correct
+         | 0 | elementParam | expectedText                                                             |
+         | 1 | Page Title   | Our bench is your bench: Lola Tech’s response to the Covid-19 situation |
+      And The "Coronavirus Help email" from the "Covid" page is displayed
 
    Scenario: Verify Lola Tech logo redirects to homepage
       Given I access the URL "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
       When I click on the "Lola Tech logo" from the "Covid" page
-   # Then The user is redirected to "https://lola-tech.webflow.io"
-   # And The title of the "Home" page tab is "lola.tech"
-   # And The "Hi message" from the "Home" page is displayed
+      Then The user is redirected to "https://lola-tech.webflow.io/"
+      And The title of the current page tab is "lola.tech"
+      And The "Hi message" from the "Home" page is displayed
 
    Scenario: Verify the Digital Experiences and Strategies button redirects to the Digital Experiences page
       Given I access the URL "https://lola-tech.webflow.io/"

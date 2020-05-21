@@ -2,6 +2,7 @@ import Page from "../.././generic/pageobjects/generic";
 import Hooks from "../../test/hooks/hooks";
 let assert = require("chai").assert;
 let webElement;
+
 class GenericActions extends Page {
   clickElement(element, page) {
     webElement = Hooks.getWebElement(element, page);
@@ -75,6 +76,28 @@ class GenericActions extends Page {
       expectedTextList,
       `The following row/s from data table are not as expected: ${textNotMatchList}.`
     );
+  }
+
+  validatePageURL(expectedUrl) {
+    let actualUrl = browser.getUrl();
+    console.log(`Checking if the page URL is: ${expectedUrl}`);
+    assert.equal(
+      actualUrl,
+      expectedUrl,
+      "The URL in the address bar does not match the expected URL"
+    );
+    console.log(`The page URL is the expected one`);
+  }
+
+  validateTabTitle(expectedTitle) {
+    let actualTitle = browser.getTitle();
+    console.log(`Checking if the browser Title is: ${expectedTitle}`);
+    assert.equal(
+      actualTitle,
+      expectedTitle,
+      "The browser title is not the expected one"
+    );
+    console.log(`The browser Title is the expected one`);
   }
 }
 
