@@ -26,7 +26,7 @@ Feature: Homepage
       Then The user is redirected to "https://lola-tech.webflow.io/"
       And The title of the current page tab is "lola.tech"
       And The "Hi message" from the "Home" page is displayed
-   @liviu
+
    Scenario: Verify the Digital Experiences and Strategies button redirects to the Digital Experiences page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
