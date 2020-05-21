@@ -3,7 +3,6 @@ Feature: Homepage
 
    Automated tests for Lola Tech website homepage
 
-   @test
    Scenario: Access the Homepage
       Given I access the URL "https://lola-tech.webflow.io/"
       Then The "Hi message" from the "Home" page is displayed
