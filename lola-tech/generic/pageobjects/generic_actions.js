@@ -54,7 +54,7 @@ class GenericActions extends Page {
       if (webElement === undefined) {
         assert.fail(`The element is not defined on the ${page} page.`);
       }
-      readTextList.push(webElement.getText());
+      readTextList.push(webElement.getText().replace(/(\r\n|\n|\r)/gm, " "));
     }
 
     //Optimized array comparison function that compares corresponding elements of each array in turn using strict equality
