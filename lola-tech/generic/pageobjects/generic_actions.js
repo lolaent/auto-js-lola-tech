@@ -101,7 +101,7 @@ class GenericActions extends Page {
   }
 
   switchToNewTab(tab) {
-    browser.pause(2000);
+    browser.pause(3000);
     browser.switchWindow(tab);
   }
 }

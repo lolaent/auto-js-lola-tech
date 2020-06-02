@@ -36,7 +36,7 @@ class Hooks extends Page {
           ),
           cluj_napoca_phone_number: $("a[href='tel:+40740980765']"),
           cluj_napoca_street_address: $(
-            "a[href='https://goo.gl/maps/XthPJHAReWnoEbqF7']"
+            "a[href='https://goo.gl/maps/LQBFBMQ1tfgfFhPc8']"
           ),
           london_address_title: $("div[class='address-block']:nth-child(2) h4"),
           london_phone_number: $("a[href='tel:+442070997782']"),
@@ -88,7 +88,7 @@ class Hooks extends Page {
           ),
           cluj_napoca_phone_number: $("a[href='tel:+40740980765']"),
           cluj_napoca_street_address: $(
-            "a[href='https://goo.gl/maps/XthPJHAReWnoEbqF7']"
+            "a[href='https://goo.gl/maps/LQBFBMQ1tfgfFhPc8']"
           ),
           london_address_title: $("div[class='address-block']:nth-child(2) h4"),
           london_phone_number: $("a[href='tel:+442070997782']"),

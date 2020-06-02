@@ -67,7 +67,7 @@ Feature: Homepage
          | 1 | Page Title   | How we design |
       When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
       Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
-   @test
+
    Scenario: Verify Addresses from Home Page and Join Us Page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
@@ -79,7 +79,7 @@ Feature: Homepage
          | 5 | London Phone Number        | +44 20 7099 7782                           |
          | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
       When I click on the "Cluj Napoca Street Address" from the "Home" page
-      Then I validate that "Bulevardul Eroilor 16 - Google Maps" page opens in a new tab
+      Then I validate that "Strada Someșului 14 - Google Maps" page opens in a new tab
       Given I access the URL "https://lola-tech.webflow.io/"
       When I click on the "London Street Address" from the "Home" page
       Then I validate that "1 Mark Square - Google Maps" page opens in a new tab
@@ -94,7 +94,7 @@ Feature: Homepage
          | 5 | London Phone Number        | +44 20 7099 7782                           |
          | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
       When I click on the "Cluj Napoca Street Address" from the "Join Us" page
-      Then I validate that "Bulevardul Eroilor 16 - Google Maps" page opens in a new tab
+      Then I validate that "Strada Someșului 14 - Google Maps" page opens in a new tab
       Given I access the URL "https://lola-tech.webflow.io/join-us"
       When I click on the "London Street Address" from the "Join Us" page
       Then I validate that "1 Mark Square - Google Maps" page opens in a new tab
