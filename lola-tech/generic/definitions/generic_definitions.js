@@ -38,3 +38,11 @@ Then(/^The title of the current page tab is "([^"]*)"$/, function(
 ) {
   GenericActions.validateTabTitle(expectedTitle);
 });
+
+When(/^I switch to the newly opened tab$/, function() {
+  GenericActions.switchToNewTab();
+});
+
+When(/^I close the current tab$/, function() {
+  GenericActions.closeCurrentTab();
+});

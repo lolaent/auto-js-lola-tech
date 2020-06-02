@@ -42,47 +42,72 @@ Feature: Homepage
 
    Scenario: Verify the Enterprise Level Software Delivery button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
-   # Then I validate that the "Enterprise Level Software Delivery" text from the "Home" page is correct
-   # When I click on the "Enterprise Level Software Delivery button" from the "Home" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-enterprise-level-software-delivery"
-   # And The title of the "Software Delivery" page tab is "Work With Us. Enterprise-level Software Delivery."
-   # And I validate that the "You're growing fast. We can help you move even faster." text from the "Software Delivery" page is correct
-   # When I click on the "DevOps from the Start link" from the "Software Delivery" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-devops-from-the-start"
+      Then I validate that the text from "Home" page is correct
+         | 0 | elementParam                       | expectedText                       |
+         | 1 | Enterprise Level Software Delivery | Enterprise-level Software Delivery |
+      When I click on the "Enterprise Level Software Delivery button" from the "Home" page
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-enterprise-level-software-delivery"
+      Then I validate that the text from "Software Delivery" page is correct
+         | 0 | elementParam | expectedText                                           |
+         | 1 | Page Title   | You're growing fast. We can help you move even faster. |
+      And The title of the current page tab is "Work With Us: Enterprise-Level Software Delivery"
+      When I click on the "DevOps from the Start link" from the "Software Delivery" page
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-devops-from-the-start"
 
    Scenario: Verify the Interface Design and Development button redirects to the Software Delivery page
       Given I access the URL "https://lola-tech.webflow.io/"
-   # Then I validate that the "Interface Design and Development" text from the "Home" page is correct
-   # When I click on the "Interface Design and Development button" from the "Home" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-how-we-design"
-   # And The title of the "How We Design" page tab is "Work With Us. How We Design."
-   # And I validate that the "How We Design." text from the "How We Design" page is correct
-   # When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
-   # Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
+      Then I validate that the text from "Home" page is correct
+         | 0 | elementParam                     | expectedText                     |
+         | 1 | Interface Design and Development | Interface Design and Development |
+      When I click on the "Interface Design and Development button" from the "Home" page
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-how-we-design"
+      And The title of the current page tab is "Work With Us: How We Design"
+      Then I validate that the text from "How We Design" page is correct
+         | 0 | elementParam | expectedText  |
+         | 1 | Page Title   | How we design |
+      When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
+      Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
 
+   @test
    Scenario: Verify Addresses from Home Page and Join Us Page
       Given I access the URL "https://lola-tech.webflow.io/"
-      # Then I validate that the "Lola Tech Cluj-Napoca" text from the "Home" page is correct
-      # And I validate that the "+40 740 980 765 Eroilor 14-16, Cluj-Napoca 400129, Romania" text from the "Home" page is correct
-      # And The "Cluj Napoca phone number" from the "Home" page is clickable
-      # And The "Cluj Napoca address" from the "Home" page is clickable
-      # And The "Cluj Napoca address" redirects to "www.google.com"
-      # And I validate that the "Lola Tech London" text from the "Home" page is correct
-      # And I validate that the "+44 20 7099 7782 1 Mark Square, London EC2A 4EG, UK" text from the "Home" page is correct
-      # And The "London phone number" from the "Home" page is clickable
-      # And The "London Napoca address" from the "Home" page is clickable
-      # And The "London Napoca address" redirects to "www.google.com"
+      Then I validate that the text from "Home" page is correct
+         | 0 | elementParam               | expectedText                               |
+         | 1 | Cluj Napoca Address Title  | Lola Tech Cluj-Napoca                      |
+         | 2 | Cluj Napoca Phone Number   | +40 740 980 765                            |
+         | 3 | Cluj Napoca Street Address | Someșului 14, Cluj-Napoca 400145, Romania |
+         | 4 | London Address Title       | Lola Tech London                           |
+         | 5 | London Phone Number        | +44 20 7099 7782                           |
+         | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
+      When I click on the "Cluj Napoca Street Address" from the "Home" page
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "Strada Someșului 14 - Google Maps"
+      When I close the current tab
+      When I click on the "London Street Address" from the "Home" page
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "1 Mark Square - Google Maps"
+      When I close the current tab
       When I click on the "Join Us button" from the "Home" page
-   # Then I validate that the "Lola Tech Cluj-Napoca" text from the "Join Us" page is correct
-   # And I validate that the "+40 740 980 765 Eroilor 14-16, Cluj-Napoca 400129, Romania" text from the "Join Us" page is correct
-   # And The "Cluj Napoca phone number" from the "Join Us" page is clickable
-   # And The "Cluj Napoca address" from the "Join Us" page is clickable
-   # And The "Cluj Napoca address" redirects to "www.google.com"
-   # And I validate that the "Lola Tech London" text from the "Join Us" page is correct
-   # And I validate that the "+44 20 7099 7782 1 Mark Square, London EC2A 4EG, UK" text from the "Join Us" page is correct
-   # And The "London phone number" from the "Join Us" page is clickable
-   # And The "London Napoca address" from the "Join Us" page is clickable
-   # And The "London Napoca address" redirects to "www.google.com"
+      Then I validate that the text from "Join Us" page is correct
+         | 0 | elementParam               | expectedText                               |
+         | 1 | Cluj Napoca Address Title  | Lola Tech Cluj-Napoca                      |
+         | 2 | Cluj Napoca Phone Number   | +40 740 980 765                            |
+         | 3 | Cluj Napoca Street Address | Someșului 14, Cluj-Napoca 400145, Romania |
+         | 4 | London Address Title       | Lola Tech London                           |
+         | 5 | London Phone Number        | +44 20 7099 7782                           |
+         | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
+      When I click on the "Cluj Napoca Street Address" from the "Join Us" page
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "Strada Someșului 14 - Google Maps"
+      When I close the current tab
+      When I click on the "London Street Address" from the "Home" page
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "1 Mark Square - Google Maps"
+      When I close the current tab
 
    Scenario: Validate that "Work schedual system" is clickable
       Given I access the URL "https://lola-tech.webflow.io/case-studies/future-proof-hotel-booking-platform"

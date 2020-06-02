@@ -54,7 +54,7 @@ class GenericActions extends Page {
       if (webElement === undefined) {
         assert.fail(`The element is not defined on the ${page} page.`);
       }
-      readTextList.push(webElement.getText());
+      readTextList.push(webElement.getText().replace(/(\r\n|\n|\r)/gm, " "));
     }
 
     //Optimized array comparison function that compares corresponding elements of each array in turn using strict equality
@@ -74,7 +74,7 @@ class GenericActions extends Page {
     assert.deepEqual(
       readTextList,
       expectedTextList,
-      `The following row/s from data table are not as expected: ${textNotMatchList}.`
+      `The following row/s from data table are not as expected: ${textNotMatchList.reverse()}.`
     );
   }
 
@@ -98,6 +98,18 @@ class GenericActions extends Page {
       "The browser title is not the expected one"
     );
     console.log(`The browser Title is the expected one`);
+  }
+
+  switchToNewTab() {
+    let openTabs = browser.getWindowHandles();
+    console.log(openTabs);
+    browser.switchToWindow(openTabs[1]);
+  }
+
+  closeCurrentTab() {
+    browser.closeWindow();
+    let windowsName = browser.getWindowHandles();
+    browser.switchToWindow(windowsName[0]);
   }
 }
 
