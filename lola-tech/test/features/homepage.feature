@@ -67,14 +67,14 @@ Feature: Homepage
          | 1 | Page Title   | How we design |
       When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
       Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
-
+   @test
    Scenario: Verify Addresses from Home Page and Join Us Page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
          | 0 | elementParam               | expectedText                               |
          | 1 | Cluj Napoca Address Title  | Lola Tech Cluj-Napoca                      |
          | 2 | Cluj Napoca Phone Number   | +40 740 980 765                            |
-         | 3 | Cluj Napoca Street Address | Eroilor 14-16, Cluj-Napoca 400129, Romania |
+         | 3 | Cluj Napoca Street Address | Someșului 14, Cluj-Napoca 400145, Romania |
          | 4 | London Address Title       | Lola Tech London                           |
          | 5 | London Phone Number        | +44 20 7099 7782                           |
          | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
@@ -89,7 +89,7 @@ Feature: Homepage
          | 0 | elementParam               | expectedText                               |
          | 1 | Cluj Napoca Address Title  | Lola Tech Cluj-Napoca                      |
          | 2 | Cluj Napoca Phone Number   | +40 740 980 765                            |
-         | 3 | Cluj Napoca Street Address | Eroilor 14-16, Cluj-Napoca 400129, Romania |
+         | 3 | Cluj Napoca Street Address | Someșului 14, Cluj-Napoca 400145, Romania |
          | 4 | London Address Title       | Lola Tech London                           |
          | 5 | London Phone Number        | +44 20 7099 7782                           |
          | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |

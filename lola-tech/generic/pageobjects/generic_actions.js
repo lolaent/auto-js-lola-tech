@@ -74,7 +74,7 @@ class GenericActions extends Page {
     assert.deepEqual(
       readTextList,
       expectedTextList,
-      `The following row/s from data table are not as expected: ${textNotMatchList}.`
+      `The following row/s from data table are not as expected: ${textNotMatchList.reverse()}.`
     );
   }
 
@@ -98,6 +98,11 @@ class GenericActions extends Page {
       "The browser title is not the expected one"
     );
     console.log(`The browser Title is the expected one`);
+  }
+
+  switchToNewTab(tab) {
+    browser.pause(2000);
+    browser.switchWindow(tab);
   }
 }
 
