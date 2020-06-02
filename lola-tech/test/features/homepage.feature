@@ -68,6 +68,7 @@ Feature: Homepage
       When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
       Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
 
+   @test
    Scenario: Verify Addresses from Home Page and Join Us Page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
@@ -79,11 +80,15 @@ Feature: Homepage
          | 5 | London Phone Number        | +44 20 7099 7782                           |
          | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
       When I click on the "Cluj Napoca Street Address" from the "Home" page
-      Then I validate that "Strada Someșului 14 - Google Maps" page opens in a new tab
-      Given I access the URL "https://lola-tech.webflow.io/"
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "Strada Someșului 14 - Google Maps"
+      When I close the current tab
       When I click on the "London Street Address" from the "Home" page
-      Then I validate that "1 Mark Square - Google Maps" page opens in a new tab
-      Given I access the URL "https://lola-tech.webflow.io/"
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "1 Mark Square - Google Maps"
+      When I close the current tab
       When I click on the "Join Us button" from the "Home" page
       Then I validate that the text from "Join Us" page is correct
          | 0 | elementParam               | expectedText                               |
@@ -94,10 +99,15 @@ Feature: Homepage
          | 5 | London Phone Number        | +44 20 7099 7782                           |
          | 6 | London Street Address      | 1 Mark Square, London EC2A 4EG, UK         |
       When I click on the "Cluj Napoca Street Address" from the "Join Us" page
-      Then I validate that "Strada Someșului 14 - Google Maps" page opens in a new tab
-      Given I access the URL "https://lola-tech.webflow.io/join-us"
-      When I click on the "London Street Address" from the "Join Us" page
-      Then I validate that "1 Mark Square - Google Maps" page opens in a new tab
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "Strada Someșului 14 - Google Maps"
+      When I close the current tab
+      When I click on the "London Street Address" from the "Home" page
+      And I switch to the newly opened tab
+      Then The "Close button" from the "Google Maps" page is displayed
+      Then The title of the current page tab is "1 Mark Square - Google Maps"
+      When I close the current tab
 
    Scenario: Validate that "Work schedual system" is clickable
       Given I access the URL "https://lola-tech.webflow.io/case-studies/future-proof-hotel-booking-platform"

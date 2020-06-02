@@ -98,6 +98,11 @@ class Hooks extends Page {
           join_with_us_button: $("a[href='/join-us']"),
         }[elementName];
 
+      case "Google Maps":
+        return {
+          close_button: $("a[class='gsst_a']"),
+        }[elementName];
+
       default:
         assert.fail(
           `The page argument is not provided or does not exist inside on the Hooks page.`

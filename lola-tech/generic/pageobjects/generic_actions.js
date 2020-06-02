@@ -100,9 +100,16 @@ class GenericActions extends Page {
     console.log(`The browser Title is the expected one`);
   }
 
-  switchToNewTab(tab) {
-    browser.pause(3000);
-    browser.switchWindow(tab);
+  switchToNewTab() {
+    let openTabs = browser.getWindowHandles();
+    console.log(openTabs);
+    browser.switchToWindow(openTabs[1]);
+  }
+
+  closeCurrentTab() {
+    browser.closeWindow();
+    let windowsName = browser.getWindowHandles();
+    browser.switchToWindow(windowsName[0]);
   }
 }
 
