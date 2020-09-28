@@ -68,7 +68,6 @@ Feature: Homepage
       When I click on the "Digital Experiences and Strategy link" from the "How We Design" page
       Then The user is redirected to "https://lola-tech.webflow.io/work-with-us-digital-experience-strategy-and-design"
 
-   @test
    Scenario: Verify Addresses from Home Page and Join Us Page
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
