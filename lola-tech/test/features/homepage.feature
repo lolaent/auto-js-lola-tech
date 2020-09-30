@@ -9,15 +9,15 @@ Feature: Homepage
       # And The "Cookie Popup" from the "Home" page is displayed (does not work on stage site)
       When I click on the "Latest Jobs button" from the "Home" page
 
-   Scenario: Verify Covid banner redirects to the correct page
-      Given I access the URL "https://lola-tech.webflow.io/"
-      When I click on the "Covid Banner" from the "Home" page
-      Then The user is redirected to "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
-      And The title of the current page tab is "Our bench is your bench: Lola Tech’s response to the Covid-19 situation"
-      And I validate that the text from "Covid" page is correct
-         | 0 | elementParam | expectedText                                                             |
-         | 1 | Page Title   | Our bench is your bench: Lola Tech’s response to the Covid-19 situation |
-      And The "Coronavirus Help email" from the "Covid" page is displayed
+# Scenario: Verify Covid banner redirects to the correct page
+#    Given I access the URL "https://lola-tech.webflow.io/"
+#    When I click on the "Covid Banner" from the "Home" page
+#    Then The user is redirected to "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
+#    And The title of the current page tab is "Our bench is your bench: Lola Tech’s response to the Covid-19 situation"   #####there is no Covid banner on Lola Tech webpage anymore
+#    And I validate that the text from "Covid" page is correct
+#       | 0 | elementParam | expectedText                                                             |
+#       | 1 | Page Title   | Our bench is your bench: Lola Tech’s response to the Covid-19 situation |
+#    And The "Coronavirus Help email" from the "Covid" page is displayed
 
    Scenario: Verify Lola Tech logo redirects to homepage
       Given I access the URL "https://lola-tech.webflow.io/covid19-our-bench-is-your-bench"
@@ -116,5 +116,5 @@ Feature: Homepage
       Given I access the URL "https://lola-tech.webflow.io/"
       Then I validate that the text from "Home" page is correct
          | 0 | elementParam       | expectedText          |
-         | 1 | Hi message         | Hi—we’re Lola Tech. |
+         | 1 | Hi message | Hi - we’re Lola Tech. |
          | 2 | Latest Jobs button | LATEST JOBS           |

@@ -7,10 +7,12 @@ class Hooks extends Page {
     elementName = Utils.formatLocator(elementName);
 
     switch (page) {
-      case "Home":
+      case 'Home':
         return {
           latest_jobs_button: $("a[class='jobs nav-jobs w-button']"),
-          hi_message: $("h2[class='h2 intro_title margin-top h2-covid']"),
+          hi_message: $(
+            "div[id='intro'] h2[class='h2 intro_title margin-top']"
+          ),
           cookie_popup: $("div[id='CybotCookiebotDialog']"),
           covid_banner: $("a[class='link-block link-covid w-inline-block']"),
           digital_experiences_and_strategies: $(
@@ -45,22 +47,22 @@ class Hooks extends Page {
           ),
           join_us_button: $("a[href='/join-us']"),
         }[elementName];
-      case "Jobs":
+      case 'Jobs':
         // code block
         break;
-      case "About":
+      case 'About':
         // code block
         break;
-      case "Future-proof":
+      case 'Future-proof':
         return {
           hlo_title: $("h1[class='blurring-title h_title']"),
         }[elementName];
-      case "Digital Experiences":
+      case 'Digital Experiences':
         return {
           page_title: $("h1[class='blurring-title h_title']"),
           read_more_on_how_we_design_link: $("div[class='text-block']"),
         }[elementName];
-      case "Covid":
+      case 'Covid':
         return {
           page_title: $("h2[class='blurring-title h_title']"),
           coronavirus_help_email: $(
@@ -68,12 +70,12 @@ class Hooks extends Page {
           ),
           lola_tech_logo: $("a[class='logo-link-new w-nav-brand']"),
         }[elementName];
-      case "Software Delivery":
+      case 'Software Delivery':
         return {
           page_title: $("h1[class='blurring-title h_title']"),
           devops_from_the_start_link: $("div[class='page-nav-container'] "),
         }[elementName];
-      case "How We Design":
+      case 'How We Design':
         return {
           page_title: $("h1[class='blurring-title h_title']"),
           digital_experiences_and_strategy_link: $(
@@ -81,7 +83,7 @@ class Hooks extends Page {
           ),
         }[elementName];
 
-      case "Join Us":
+      case 'Join Us':
         return {
           cluj_napoca_address_title: $(
             "div[class='address-block']:nth-child(1) h4"
@@ -98,7 +100,7 @@ class Hooks extends Page {
           join_with_us_button: $("a[href='/join-us']"),
         }[elementName];
 
-      case "Google Maps":
+      case 'Google Maps':
         return {
           close_button: $("a[class='gsst_a']"),
         }[elementName];
