@@ -4,13 +4,17 @@ let assert = require("chai").assert;
 
 class Hooks extends Page {
   getWebElement(elementName, page) {
+    console.log(elementName);
     elementName = Utils.formatLocator(elementName);
+    console.log(elementName);
 
     switch (page) {
       case "Home":
         return {
           latest_jobs_button: $("a[class='jobs nav-jobs w-button']"),
-          hi_message: $("h2[class='h2 intro_title margin-top h2-covid']"),
+          hi_message: $(
+            "div[id='intro'] h2[class='h2 intro_title margin-top']"
+          ),
           cookie_popup: $("div[id='CybotCookiebotDialog']"),
           covid_banner: $("a[class='link-block link-covid w-inline-block']"),
           digital_experiences_and_strategies: $(
